@@ -41,6 +41,12 @@ class TestAccountService(TestCase):
     def tearDownClass(cls):
         """Runs once before test suite"""
 
+    @classmethod
+    def setUpClass(cls):
+        """Run once before all tests"""
+        { other lines of code here ... }
+        talisman.force_https = False
+
     def setUp(self):
         """Runs before each test"""
         db.session.query(Account).delete()  # clean up the last tests
